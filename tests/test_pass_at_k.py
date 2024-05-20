@@ -37,6 +37,14 @@ def test_pass_at_k_1():
     assert pass_at_k(13, 0, 10) == pytest.approx(0.0)
     assert pass_at_k(92, 92, 10) == pytest.approx(1.0)
 
+    # Examples in README:
+    assert pass_at_k(
+        num_total_samples_n=8,
+        num_correct_samples_c=3,
+        k=5,
+    ) == pytest.approx(0.98214285714)
+    assert pass_at_k(8, 3, 1) == pytest.approx(0.375)
+
 
 def test_pass_at_k_invalid_input():
     # invalid types
