@@ -23,13 +23,11 @@ def test_pass_at_k_1():
     assert pass_at_k(17, 15, 5) == pytest.approx(1.0)
     assert pass_at_k(83, 17, 1) == pytest.approx(0.2048192771084335)
     assert pass_at_k(29, 0, 1) == pytest.approx(0.0)
-    assert pass_at_k(5, 1, 25) == pytest.approx(1.0)
     assert pass_at_k(93, 9, 1) == pytest.approx(0.09677419354838701)
     assert pass_at_k(96, 2, 1) == pytest.approx(0.02083333333333337)
     assert pass_at_k(93, 38, 25) == pytest.approx(0.9999998973803372)
     assert pass_at_k(100, 62, 5) == pytest.approx(0.9933329986165038)
     assert pass_at_k(64, 32, 10) == pytest.approx(0.9995741013348244)
-    assert pass_at_k(5, 4, 25) == pytest.approx(1.0)
     assert pass_at_k(49, 43, 25) == pytest.approx(1.0)
     assert pass_at_k(92, 22, 10) == pytest.approx(0.9449836504863601)
     assert pass_at_k(54, 15, 1) == pytest.approx(0.2777777777777779)
@@ -70,3 +68,9 @@ def test_pass_at_k_invalid_input():
         pass_at_k(20, 10, 0)
     with pytest.raises(AssertionError):
         pass_at_k(20, 10, -1)
+
+    # invalid ranges (n < k)
+    with pytest.raises(AssertionError):
+        assert pass_at_k(5, 4, 25)  # == pytest.approx(1.0)
+    with pytest.raises(AssertionError):
+        assert pass_at_k(5, 1, 25)  # == pytest.approx(1.0)

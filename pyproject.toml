@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pass_at_k"
-version = "0.0.1"
+version = "0.0.2"
 authors = [{ name = "parker-research" }]
 description = "A minimalistic Python library to evaluate the pass-at-k metric"
 readme = "README.md"

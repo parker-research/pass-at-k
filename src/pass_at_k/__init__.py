@@ -1,3 +1,5 @@
+__VERSION__ = "0.0.2"
+
 import math
 
 
@@ -20,6 +22,7 @@ def pass_at_k(num_total_samples_n: int, num_correct_samples_c: int, k: int) -> f
         0 <= num_correct_samples_c <= num_total_samples_n
     ), "num_correct_samples_c must be between 0 and num_total_samples_n"
     assert num_total_samples_n > 0, "num_total_samples_n must be greater than 0"
+    assert num_total_samples_n >= k, "num_total_samples_n must be greater than or equal to k"
     assert k > 0, "k must be greater than 0"
 
     if num_total_samples_n - num_correct_samples_c < k:
